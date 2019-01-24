@@ -41,7 +41,12 @@ public class EightPuzzleState implements State {
      */
     @Override
     public double findCost() {
-        return 1;
+        int cost = 0;
+        for (int i = 0; i < curBoard.length; i++) {
+            int goalNumber = GOAL[i] == 0 ? 9 : GOAL[i];
+            cost += Math.abs(curBoard[i] - goalNumber);
+        }
+        return cost;
     }
 
     /*
