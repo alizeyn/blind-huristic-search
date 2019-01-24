@@ -18,8 +18,6 @@ public class UCSearch {
         Queue<SearchNode> q = new LinkedList<SearchNode>();
         q.add(root);
 
-        int searchCount = 1; // counter for number of iterations
-
         while (!q.isEmpty()) // while the queue is not empty
         {
             SearchNode tempNode = q.poll();
@@ -74,8 +72,6 @@ public class UCSearch {
                         q.add(nodeSuccessors.get(i));
                     }
                 }
-
-                searchCount++;
             } else
             // The goal state has been found. Print the path it took to get to
             // it.
